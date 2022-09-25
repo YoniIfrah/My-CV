@@ -12,11 +12,12 @@ const SkillList = (props) => {
       console.log('error in variable:', output);
       return;
     }
+    const style={width:'6rem'}
   return (
     <article className='skill_details'>
     {Skills.map(skill => (
       <>
-      <div>
+      <div style={style}>
       <BsPatchCheckFill className='skill_details-icon'/><h4>
         {skill}
       </h4>
