@@ -11,33 +11,12 @@ import Popup from "../popup/Popup";
 const Contact = () => {
   const MyEmail = "yonifrah996@gmail.com";
   const whatsapp = "https://wa.me/972525639295"
-  const [name, setName] = useState('');
-  const [msg, setMsg] = useState('');
-  const [email, setEmail] = useState('');
-
 
   // for popup
   const [visibility, setVisibility] = useState(false);
   const popupCloseHandler = () => {
     setVisibility(false);
   };
-  
-  const handleClick = () => {
-    switch (true){
-      case !name:
-        console.log("Error in name variable: " + name);
-        return;
-      case !msg:
-        console.log("Error in msg variable: " + msg);
-        return;
-      case !email:
-        console.log("Error in email variable: " + email);
-        return;
-      default:
-        break;
-    }
-    setVisibility(true)
-  }
 
 
   // for Email js
@@ -52,6 +31,10 @@ const Contact = () => {
       });
 
       e.target.reset()
+
+      //for popup
+      setVisibility(true)
+
   };
 
   return (
@@ -79,11 +62,11 @@ const Contact = () => {
          onClick will check if the form is completed, if we get true then popup will appear */}
 
         <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name='name' placeholder='Your Full Name' required value={name} onChange={(e) => setName(e.target.value)}/>
-          <input type="email" name='email' placeholder='Your Email' required value={email} onChange={(e) => setEmail(e.target.value)}/>
-          <textarea name="message" rows="7" placeholder='Your Message' required value={msg} onChange={(e) => setMsg(e.target.value)}></textarea>
+          <input type="text" name='name' placeholder='Your Full Name' required/>
+          <input type="email" name='email' placeholder='Your Email' required />
+          <textarea name="message" rows="7" placeholder='Your Message' required ></textarea>
           <>
-          <button onClick={handleClick} type='submit' className='btn btn-primary' >Send Message</button>
+          <button type='submit' className='btn btn-primary' >Send Message</button>
           <Popup onClose={popupCloseHandler} show={visibility} title="Popup">
             <h1>Email has sent !</h1>
           </Popup>
