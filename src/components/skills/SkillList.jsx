@@ -2,14 +2,9 @@ import React from 'react'
 import {BsPatchCheckFill} from 'react-icons/bs'
 
 const SkillList = (props) => {
-    const output = props.output;
-    var Skills;
-    if (output === 'frontend'){
-      Skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap',];
-    } else if (output === 'backend'){
-      Skills = ['Django', 'NodeJS' ,'Firebase', 'MongoDB', 'PostgreSQL'];
-    } else {
-      console.log('error in variable:', output);
+    const Skills = props.skills;
+    if (!Skills) {
+      console.log('error in variable:', Skills);
       return;
     }
     const style={width:'6rem'}
@@ -18,7 +13,8 @@ const SkillList = (props) => {
     {Skills.map(skill => (
       <>
       <div style={style}>
-      <BsPatchCheckFill className='skill_details-icon'/><h4>
+      <BsPatchCheckFill className='skill_details-icon'/>
+      <h4>
         {skill}
       </h4>
       </div>

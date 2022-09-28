@@ -50,6 +50,13 @@ header{
     
 }
 
+.me > img{
+    float: left;
+    width:  300px;
+    height: 350px;
+    object-fit: cover;
+}
+
 /* === SCROLL DOWN === */
 .scroll_down{
     position: absolute;
