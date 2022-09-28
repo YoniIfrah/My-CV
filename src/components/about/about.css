@@ -21,7 +21,8 @@
     transition: var(--transition);
     background: var(--color-light);
 
-    /* TODO: need to be dynamic */
+    /* TODO: need to be dynamic - fixed */
+    width: 100%;
     /* height: 300px;
     width: 288px; */
 }
