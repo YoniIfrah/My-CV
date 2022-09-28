@@ -13,6 +13,7 @@ const SkillList = (props) => {
     {Skills.map(skill => (
       <>
       <div style={style}>
+        {/* @TODO: need to be sent by children */}
       <BsPatchCheckFill className='skill_details-icon'/>
       <h4>
         {skill}
