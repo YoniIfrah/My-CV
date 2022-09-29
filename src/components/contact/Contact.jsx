@@ -2,7 +2,7 @@
 import React from 'react'
 import './contact.css'
 import {MdOutlineEmail} from 'react-icons/md'
-import {BsWhatsapp } from 'react-icons/bs'
+import {BsWhatsapp, BsTelephone } from 'react-icons/bs'
 import  { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Popup from "../popup/Popup";
@@ -10,6 +10,7 @@ import Popup from "../popup/Popup";
 
 const Contact = () => {
   const MyEmail = "yonifrah996@gmail.com";
+  const phoneNumber = "972525639295"
   const whatsapp = "https://wa.me/972525639295"
 
   // for popup
@@ -55,6 +56,10 @@ const Contact = () => {
             <BsWhatsapp className='contact_option-icon'/>
           </ContactOption>
 
+          {/* CONTACT VIA MOBILE */}
+          <ContactOption header4="Call" header5="052 - 563 9295" href={"tel:+" + phoneNumber} text='Call'>
+            <BsTelephone className='contact_option-icon'/>
+          </ContactOption>
         </div>
 
 
@@ -77,13 +82,13 @@ const Contact = () => {
   )
 }
 
-function ContactOption({children, header4, header5, href}){
+function ContactOption({children, header4, header5, href, text='Send a message'}){
   return (
   <article className='contact_option'>
   <div>{children}</div>
   <h4>{header4}</h4>
   <h5>{header5}</h5>
-  <a href={href} target="_blank" rel='noreferrer'>Send a message</a>
+  <a href={href} target="_blank" rel='noreferrer'>{text}</a>
   </article>
   );
 }

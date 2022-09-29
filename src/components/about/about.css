@@ -32,7 +32,7 @@
 }
 
 .about_cards{
-    display: grid;
+    display: inline;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
@@ -43,6 +43,7 @@
     border-radius: 1rem;
     padding: 2rem;
     text-align: center;
+    margin: 1.5rem;
 }
 
 .about_card:hover{
