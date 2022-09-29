@@ -10,7 +10,7 @@
     text-decoration: none;
 }
 
-:root{
+#root{
     --color-bg:#1f1f38;
     --color-bg-variant: #2c2c6c;
     --color-primary: #4db5ff;
@@ -23,6 +23,11 @@
     --container-width-sm: 90%;
 
     --transition: all 400ms ease;
+    --transition2: all 1000ms ease;
+
+    background: var(--color-bg);
+    transition: var(--transition2);
+
 }
 
 
@@ -48,6 +53,7 @@ body{
 
 h1,h2, h3, h4, h5{
     font-weight: 500;
+    color: var(--color-white);
 }
 
 h1{

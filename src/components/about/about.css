@@ -18,7 +18,7 @@
     border-radius: 2rem;
     overflow: hidden;
     transform:  rotate(10deg);
-    transition: var(--transition);
+    transition: var(--transition2);
     background: var(--color-light);
 
     /* TODO: need to be dynamic - fixed */
