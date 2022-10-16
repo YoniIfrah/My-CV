@@ -14,7 +14,7 @@ const ToggleButton = () => {
         //setting to light mode
         rootStyle.setProperty('--color-bg', '#EEEEEE');
         // need to fix the color below '--color-bg-variant'
-        rootStyle.setProperty('--color-bg-variant', '#a097ad');
+        rootStyle.setProperty('--color-bg-variant', '#e5e4e2');
         rootStyle.setProperty('--color-primary', '#64488F');
         rootStyle.setProperty('--color-primary-variant', '#A899C1');
         rootStyle.setProperty('--color-white', 'black');
