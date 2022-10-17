@@ -20,9 +20,6 @@ import stocks from '../../assets/portfolio-images/stocks.jpg'
 import schedule from '../../assets/portfolio-images/schedule.jpg'
 import '../portfolio/portfolio.css'
 
-// var width = window.screen.width * 0.9;
-
-
 
 const data = [
     {
