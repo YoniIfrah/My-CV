@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -20,13 +20,16 @@ import stocks from '../../assets/portfolio-images/stocks.jpg'
 import schedule from '../../assets/portfolio-images/schedule.jpg'
 import '../portfolio/portfolio.css'
 
+// var width = window.screen.width * 0.9;
+
+
 
 const data = [
     {
       id: 1,
-      img: btc,
-      title: 'Cryptocurrency Signals',
-      github: 'hidden',
+      img: stocks,
+      title: 'Stocks Data Visualization',
+      github: 'https://github.com/YoniIfrah/Python-Financial-Analysis-Algorithmic-Trading',
     },
     {
       id: 2,
@@ -42,9 +45,9 @@ const data = [
     },
     {
       id: 4,
-      img: stocks,
-      title: 'Stocks Data Visualization',
-      github: 'https://github.com/YoniIfrah/Python-Financial-Analysis-Algorithmic-Trading',
+      img: btc,
+      title: 'Cryptocurrency Signals',
+      github: 'hidden',
     },
     {
       id: 5,
@@ -59,11 +62,27 @@ const [hovering, setHovering] = useState(false)
 const onHoverProps = {
     onMouseEnter: () => setHovering(true),
     onMouseLeave: () => setHovering(false),
-}
+  }
     return [hovering, onHoverProps]
 }
+
+function useWindowSize() {
+  const [size, setSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+  return size;
+}
+
 export default function Swipers() {
     const [buttonAIsHovering, buttonAHoverProps] = useHover()
+    const [width] = useWindowSize();
+
 
   return (
     <section id='portfolio'>
@@ -90,19 +109,16 @@ export default function Swipers() {
 
       {
         data.map(({id, img, title, github}) => {
-          return (
+          return (            
             <SwiperSlide key={id} className='portfolio_item'>
                 <div className='portfolio_item-image'>
-                  <img src={img} alt={title} className='portfolio-img' />
+                  <img src={img} alt={title} className='portfolio-img center' style={{"minWidth": width*0.9}} />
                 </div>
                 <h3 {...buttonAHoverProps}>
                     {buttonAIsHovering
-                    ? <button href={github} className='btn'>Go To Github</button> 
+                    ? <a href={github} target="_blank" rel="noreferrer"> <button className='btn'>Go To Github</button> </a>
                     :  <button className='btn'> {title}</button>}
                 </h3>
-                {/* <div className="portfolio_item-cta">
-                <a href={github} className='btn'>Github</a>
-                </div> */}
             </SwiperSlide>);
         })
       }
