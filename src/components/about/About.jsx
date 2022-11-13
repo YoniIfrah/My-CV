@@ -38,7 +38,7 @@ const About = () => (
         </div>
 
         <p>
-          Hello, Im a software engineer student who seeking for a Fullstack position.
+          Hello, Im a software engineer student who seeking for a DevOps position.
         </p>
 
         <a href="#contact" className='btn btn-primary'>Let's Talk</a>

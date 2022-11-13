@@ -7,6 +7,7 @@ import Footer from './components/footer/Footer'
 import Skills from './components/skills/Skills'
 import Swipers from './components/portfolio/swiper'
 
+
 const App = () => {
 
   return (
