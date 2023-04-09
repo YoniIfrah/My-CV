@@ -44,7 +44,7 @@ const data = [
       id: 4,
       img: btc,
       title: 'Cryptocurrency Signals',
-      github: 'hidden',
+      github: 'https://github.com/YoniIfrah/Crypto-Signal',
     },
     {
       id: 5,
