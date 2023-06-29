@@ -1,6 +1,7 @@
 import React from 'react'
 import './skills.css'
-import SkillList from './SkillList'
+import Icon from './Icon'
+import { backendSkills, frontendSkills } from '../../assets/skills'
 
 const Skills = () => {
 
@@ -11,21 +12,28 @@ const Skills = () => {
         <div className='container skill_container'>
           {/* @TODO: fix console error */}
             <div className='skill_fronted'>
-
             <h3>Frontend Development</h3>
-            <div className='skill_content'>
-            <SkillList skills={['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap',]}/>
+                <article className='skill_details'>
+                  {
+                    frontendSkills.map((skill) =>(
+                      <Icon key={skill.id} skill={skill}></Icon>
+                    ))
+                  }
+                </article>  
             </div>
 
-            </div>
             <div className='skill_backend'>
-
-            <h3>Backend Development</h3>
-            <div className='skill_content'>
-            <SkillList skills={['Django', 'NodeJS' ,'Firebase', 'MongoDB', 'PostgreSQL']}/>
-            </div>
-
-
+              <h3>Backend Development</h3>
+              {/* <div className='skill_content'>
+            <SkillList skills={['Flask', 'NodeJS' ,'Firebase', 'MongoDB', 'PostgreSQL']}/>
+            </div> */}
+            <article className='skill_details'>
+                  {
+                    backendSkills.map((skill) =>(
+                      <Icon key={skill.id} skill={skill}></Icon>
+                    ))
+                  }
+                </article>  
             </div>
         </div>
     </section>

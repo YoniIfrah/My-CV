@@ -4,6 +4,10 @@
     gap: 2rem;
 }
 
+.icon_color {
+    color: var(--color-white);
+}
+
 .skill_container > div {
     background: var(--color-bg-variant);
     padding: 2.4rem 5rem;
@@ -40,7 +44,7 @@
 
 .skill_details-icon{
     margin-top: 6px;
-    color: var(--color-primary);
+    color: var(--color-white);
 }
 
 /* === for tables === */
