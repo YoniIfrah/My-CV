@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo } from "react";
 import "./header.css";
 import CTA from "./CTA";
 import HeaderSocials from "./HeaderSocials";
@@ -19,7 +19,9 @@ const checkWebGLSupport = () => {
 };
 
 const Header = () => {
-    const [support3D, setSupport3D] = useState(checkWebGLSupport());
+    const support3D = useMemo(() => {
+        return checkWebGLSupport();
+    }, []);
 
     console.log("re-rendering parent");
     return (
