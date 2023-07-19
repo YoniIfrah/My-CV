@@ -4,7 +4,7 @@ import house from "./portfolio-images/houses.jpg";
 import stocks from "./portfolio-images/stocks.jpg";
 import schedule from "./portfolio-images/schedule.jpg";
 import next from "./portfolio-images/nextjs.jpg";
-import mern from "./portfolio-images/mern.jpg";
+import mern from "./portfolio-images/mern4.jpg";
 
 export const data = [
     {

@@ -23,7 +23,6 @@ const Header = () => {
         return checkWebGLSupport();
     }, []);
 
-    console.log("re-rendering parent");
     return (
         <header>
             <div className="container header_container">
@@ -31,6 +30,7 @@ const Header = () => {
                 <h1>Yoni Ifrah</h1>
                 <h5 className="text-light">FullStack Developer</h5>
                 <CTA />
+                <br />
                 <HeaderSocials />
                 <SubHeader support3D={support3D} />
                 <a href="#contact" className="scroll_down">
