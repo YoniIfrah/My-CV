@@ -68,6 +68,7 @@ export default function Swipers() {
                             <SwiperSlide key={id} className="portfolio_item">
                                 <div className="portfolio_item-image">
                                     <img
+                                        loading="lazy"
                                         src={img}
                                         alt={title}
                                         className="portfolio-img center"
